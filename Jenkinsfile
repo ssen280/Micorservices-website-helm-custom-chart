@@ -39,11 +39,7 @@
        }
      }
    }
-   stage('Clean up') {
-     steps {
-       cleanWs()
-       }
-     }
+
   
    }
  }
