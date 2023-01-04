@@ -50,7 +50,7 @@
 //             sh 'zip -qr Micorservices-website-helm-custom-chart.zip ${WORKSPACE}/*'
 //      }
 
-    }
+//     }
     stage ('Upload Artifact to Artifactory') {
           steps {
             script { 
