@@ -59,7 +59,7 @@
                     "files": [
                       {
                        "pattern": "Micorservices-website-helm-custom-chart",
-                       "target": "saikat/Micorservices-website-helm-custom-chart",
+                       "target": "bunty/Micorservices-website-helm-custom-chart",
                        "props": "status=ready"
                        }
                     ]
