@@ -47,7 +47,7 @@
     }
     stage ('Package Artifact') {
     steps {
-            sh 'zip -qr online-shop-microservices-deployment-helm-file.zip ${WORKSPACE}/*'
+            sh 'zip -qr Micorservices-website-helm-custom-chart.zip ${WORKSPACE}/*'
      }
 
     }
