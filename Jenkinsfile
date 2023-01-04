@@ -45,10 +45,10 @@
             git branch: 'main', url: 'https://github.com/ssen280/Micorservices-website-helm-custom-chart.git'
       }
     }
-    stage ('Package Artifact') {
-    steps {
-            sh 'zip -qr Micorservices-website-helm-custom-chart.zip ${WORKSPACE}/*'
-     }
+//     stage ('Package Artifact') {
+//     steps {
+//             sh 'zip -qr Micorservices-website-helm-custom-chart.zip ${WORKSPACE}/*'
+//      }
 
     }
     stage ('Upload Artifact to Artifactory') {
@@ -58,9 +58,9 @@
                  def uploadSpec = """{
                     "files": [
                       {
-                       "pattern": "online-shop-microservices-deployment-helm-file.zip",
-                       "target": "saikat/online-shop-microservices-deployment-helm-file",
-                       "props": "type=zip;status=ready"
+                       "pattern": "Micorservices-website-helm-custom-chart",
+                       "target": "saikat/Micorservices-website-helm-custom-chart",
+                       "props": "status=ready"
                        }
                     ]
                  }""" 
