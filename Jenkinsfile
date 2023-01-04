@@ -42,7 +42,7 @@
     stage('Upload Artifact to Artifactory') {
       steps {
         script { 
-                def server = Artifactory.server 'artifactory'                 
+                def server = Artifactory.server 'lke86053-131378-63b56d60ad4f'                 
                 def uploadSpec = """{
                     "files": [
                       {
