@@ -39,25 +39,32 @@
        }
      }
    }
-    stage('Upload Artifact to Artifactory') {
-      steps {
-        script { 
-                def server = Artifactory.server 'lke86053-131378-63b56d60ad4f'                 
-                def uploadSpec = """{
+    stage ('Package Artifact') {
+    steps {
+            sh 'zip -qr online-shop-microservices-deployment-helm-file.zip ${WORKSPACE}/*'
+     }
+
+    }
+    stage ('Upload Artifact to Artifactory') {
+          steps {
+            script { 
+                 def server = Artifactory.server 'lke86053-131378-63b56d60ad4f'                 
+                 def uploadSpec = """{
                     "files": [
                       {
-                       "pattern": "php-todo.zip",
-                       "target": "artifacts-todo-php",
+                       "pattern": "online-shop-microservices-deployment-helm-file.zip",
+                       "target": "saikat/online-shop-microservices-deployment-helm-file",
                        "props": "type=zip;status=ready"
-
-                      }
+                       }
                     ]
-                }""" 
+                 }""" 
 
-              server.upload spec: uploadSpec
+                 server.upload spec: uploadSpec
+               }
+            }
+  
         }
-      }
-    }
+
   
    }
  }
